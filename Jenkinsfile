@@ -10,10 +10,18 @@ pipeline{
             }
             post {
                 success {
-                    echo '开始存档....'
+                    echo 'saving....'
                     archiveArtifacts artifacts: '**/target/*.war'
                 }
             }    
         }
+       stage('Deploy'){
+            steps{
+                echo 'deploying........'
+                build job:'deploy-to-staging'
+            }
+        } 
+        
+        
     }
 }
