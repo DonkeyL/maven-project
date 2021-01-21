@@ -17,7 +17,7 @@ pipeline{
         }
        stage('Deploy'){
             steps{
-                echo 'deploying...'
+                echo 'deploying.nihao..'
                 build job:'deploy-to-staging'
             }
         } 
